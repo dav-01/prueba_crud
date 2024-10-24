@@ -32,10 +32,12 @@ composer install
 ```
 
 ### 3. Instalar Dependencias de Node.js
-
+```bash
 npm install && npm run build
+```
 
 ### 4. Configurar el Archivo .env
+```bash
 Copia el archivo .env.example como .env:
 
 Edita el archivo .env y configura las variables:
@@ -53,15 +55,19 @@ DB_DATABASE=nombre_de_tu_bd
 DB_USERNAME=tu_usuario
 DB_PASSWORD=tu_contraseña
 
-### 5. Generar la Clave de Aplicación
+```
 
+### 5. Generar la Clave de Aplicación
+```bash
 php artisan key:generate
+```
 
 ### 6. Ejecutar las Migraciones y Seeders
-
+```bash
 php artisan migrate 
 php artisan db:seed
-
+```
 ### 7. Levantar el Servidor Local
-
+```bash
 php artisan serve
+```
