@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title', 'Administración de Usuarios')</title>
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <link rel="stylesheet" href="{{ asset('build/assets/app-BuZUYtlX.css') }}">
+    <script src="{{ asset('build/assets/app-fGIFnpOl.js') }}" defer></script>
+
 </head>
 <body class="bg-gray-100 min-h-screen">
 
