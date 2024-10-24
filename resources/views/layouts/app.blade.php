@@ -16,6 +16,7 @@
         <div class="container mx-auto flex justify-between items-center">
             <a href="{{ route('users.index') }}" class="font-bold">Home</a>
             @auth
+            <span>Bienvenido, {{ auth()->user()->name }}</span>
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
                     <button type="submit" class="text-white">Cerrar sesión</button>
