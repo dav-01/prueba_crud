@@ -52,6 +52,7 @@ class UserController extends Controller
     {
         $request->validate([
             'name' => 'required',
+            'last_name' => 'required',
             'email' => 'required|email|unique:users,email,' . $user->id,
             'password' => 'nullable|min:6',
             'phone' => 'nullable',
@@ -59,6 +60,7 @@ class UserController extends Controller
 
         $user->update([
             'name' => $request->name,
+            'last_name' => $request->last_name,
             'email' => $request->email,
             'password' => $request->password ? Hash::make($request->password) : $user->password,
             'phone' => $request->phone,

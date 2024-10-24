@@ -16,19 +16,19 @@ class UserSeeder extends Seeder
     {
         // Crear usuarios de ejemplo
         User::create([
-            'nombre' => 'Admin',
-            'apellido' => 'admin',
+            'name' => 'Admin',
+            'last_name' => 'admin',
             'email' => 'admin@example.com',
             'password' => Hash::make('password123'),
-            'telefono' => '123456789',
+            'phone' => '123456789',
         ]);
 
         User::create([
-            'nombre' => 'John Doe',
-            'apellido' => 'cabrera',
+            'name' => 'John Doe',
+            'last_name' => 'cabrera',
             'email' => 'john@example.com',
             'password' => Hash::make('secret123'),
-            'telefono' => '987654321',
+            'phone' => '987654321',
         ]);
     }
 }

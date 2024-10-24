@@ -20,6 +20,7 @@
     <thead class="bg-blue-500 text-white">
         <tr>
             <th class="p-3 text-left">Nombre</th>
+            <th class="p-3 text-left">Apellido</th>
             <th class="p-3 text-left">Email</th>
             <th class="p-3 text-left">Teléfono</th>
             <th class="p-3 text-center">Acciones</th>
@@ -29,11 +30,12 @@
         @foreach($users as $user)
         <tr class="border-b">
             <td class="p-3">{{ $user->name }}</td>
+            <td class="p-3">{{ $user->last_name }}</td>
             <td class="p-3">{{ $user->email }}</td>
             <td class="p-3">{{ $user->phone }}</td>
             <td class="p-3 text-center space-x-2">
                 <a href="{{ route('users.show', $user) }}" class="bg-blue-500 hover:bg-blue-600 text-white py-1 px-3 rounded">Ver</a>
-                <a href="{{ route('users.edit', $user) }}" class="bg-yellow-500 hover:bg-yellow-600 text-white py-1 px-3 rounded">Editar</a>
+                <a href="{{ route('users.edit', $user) }}" class="bg-yellow-500 hover:bg-yellow-600 text-white py-1 px-3 rounded">Editar<nombre/a>
                 <form action="{{ route('users.destroy', $user) }}" method="POST" class="inline">
                     @csrf
                     @method('DELETE')
