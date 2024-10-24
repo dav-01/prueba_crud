@@ -10,11 +10,8 @@
     </a>
 </div>
 
-@if (session('success'))
-    <div class="bg-green-100 text-green-700 p-4 rounded mb-4">
-        {{ session('success') }}
-    </div>
-@endif
+@include('partials.alerts')
+
 
 <table class="w-full bg-white shadow-md rounded-lg overflow-hidden">
     <thead class="bg-blue-500 text-white">
