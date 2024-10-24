@@ -19,9 +19,8 @@ Sigue estos pasos para ejecutar el proyecto en tu entorno local.
 
 ### 1. Clonar el Repositorio
 ```bash
-git clone <URL_DEL_REPOSITORIO>
-cd <NOMBRE_DEL_PROYECTO>
-php artisan serve
+git clone https://github.com/dav-01/prueba_crud.git
+cd prueba_crud
 
 ```
 
