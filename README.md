@@ -71,3 +71,7 @@ php artisan db:seed
 ```bash
 php artisan serve
 ```
+### 8. Usuario inical para logearse
+
+Correo: admin@example.com
+Clave: password123
