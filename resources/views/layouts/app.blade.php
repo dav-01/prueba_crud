@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="{{ secure_asset('build/assets/app-BuZUYtlX.css') }}">
     <script src="{{ secure_asset('build/assets/app-fGIFnpOl.js') }}" defer></script>
 
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body class="bg-gray-100 min-h-screen">
 
@@ -19,8 +20,6 @@
                     @csrf
                     <button type="submit" class="text-white">Cerrar sesión</button>
                 </form>
-            @else
-                <a href="{{ route('login') }}" class="text-white">Iniciar sesión</a>
             @endauth
         </div>
     </nav>
