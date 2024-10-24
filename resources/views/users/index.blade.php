@@ -4,7 +4,7 @@
 
 @section('content')
 <div class="flex justify-between items-center mb-4">
-    <h1 class="text-2xl font-bold">Usuarios</h1>
+    <h1 class="text-2xl font-bold">Listado de usuarios</h1>
     <a href="{{ route('users.create') }}" class="bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded">
         Crear Usuario
     </a>
