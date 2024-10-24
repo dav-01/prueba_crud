@@ -1,41 +1,47 @@
 @extends('layouts.app')
 
+@section('title', 'Lista de Usuarios')
+
 @section('content')
-<div class="container">
-    <h1>Usuarios</h1>
-    <a href="{{ route('users.create') }}" class="btn btn-primary mb-3">Crear Usuario</a>
-
-    @if (session('success'))
-        <div class="alert alert-success">{{ session('success') }}</div>
-    @endif
-
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Nombre</th>
-                <th>Email</th>
-                <th>Teléfono</th>
-                <th>Acciones</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach($users as $user)
-            <tr>
-                <td>{{ $user->name }}</td>
-                <td>{{ $user->email }}</td>
-                <td>{{ $user->phone }}</td>
-                <td>
-                    <a href="{{ route('users.show', $user) }}" class="btn btn-info btn-sm">Ver</a>
-                    <a href="{{ route('users.edit', $user) }}" class="btn btn-warning btn-sm">Editar</a>
-                    <form action="{{ route('users.destroy', $user) }}" method="POST" style="display: inline-block;">
-                        @csrf
-                        @method('DELETE')
-                        <button class="btn btn-danger btn-sm" onclick="return confirm('¿Estás seguro?')">Eliminar</button>
-                    </form>
-                </td>
-            </tr>
-            @endforeach
-        </tbody>
-    </table>
+<div class="flex justify-between items-center mb-4">
+    <h1 class="text-2xl font-bold">Usuarios</h1>
+    <a href="{{ route('users.create') }}" class="bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded">
+        Crear Usuario
+    </a>
 </div>
+
+@if (session('success'))
+    <div class="bg-green-100 text-green-700 p-4 rounded mb-4">
+        {{ session('success') }}
+    </div>
+@endif
+
+<table class="w-full bg-white shadow-md rounded-lg overflow-hidden">
+    <thead class="bg-blue-500 text-white">
+        <tr>
+            <th class="p-3 text-left">Nombre</th>
+            <th class="p-3 text-left">Email</th>
+            <th class="p-3 text-left">Teléfono</th>
+            <th class="p-3 text-center">Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach($users as $user)
+        <tr class="border-b">
+            <td class="p-3">{{ $user->name }}</td>
+            <td class="p-3">{{ $user->email }}</td>
+            <td class="p-3">{{ $user->phone }}</td>
+            <td class="p-3 text-center space-x-2">
+                <a href="{{ route('users.show', $user) }}" class="bg-blue-500 hover:bg-blue-600 text-white py-1 px-3 rounded">Ver</a>
+                <a href="{{ route('users.edit', $user) }}" class="bg-yellow-500 hover:bg-yellow-600 text-white py-1 px-3 rounded">Editar</a>
+                <form action="{{ route('users.destroy', $user) }}" method="POST" class="inline">
+                    @csrf
+                    @method('DELETE')
+                    <button class="bg-red-500 hover:bg-red-600 text-white py-1 px-3 rounded" onclick="return confirm('¿Estás seguro?')">Eliminar</button>
+                </form>
+            </td>
+        </tr>
+        @endforeach
+    </tbody>
+</table>
 @endsection
