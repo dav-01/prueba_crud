@@ -34,8 +34,23 @@
             <td class="p-3">{{ $user->email }}</td>
             <td class="p-3">{{ $user->phone }}</td>
             <td class="p-3 text-center space-x-2">
-                <a href="{{ route('users.show', $user) }}" class="bg-blue-500 hover:bg-blue-600 text-white py-1 px-3 rounded">Ver</a>
-                <a href="{{ route('users.edit', $user) }}" class="bg-yellow-500 hover:bg-yellow-600 text-white py-1 px-3 rounded">Editar<nombre/a>
+                @if ($user->is_active)
+                <form action="{{ route('users.disable', $user->id) }}" method="POST" style="display:inline;">
+                    @csrf
+                    <button type="submit" class="bg-red-500 hover:bg-red-600 text-white py-1 px-3 rounded">
+                        Deshabilitar
+                    </button>
+                </form>
+                @else
+                <form action="{{ route('users.enable', $user->id) }}" method="POST" style="display:inline;">
+                    @csrf
+                    <button type="submit" class="bg-green-500 hover:bg-green-600 text-white py-1 px-3 rounded">
+                        Habilitar
+                    </button>
+                </form>
+                @endif
+                <a href="{{ route('users.edit', $user) }}" class="bg-yellow-500 hover:bg-yellow-600 text-white py-1 px-3 rounded">Editar</a>
+
                 <form action="{{ route('users.destroy', $user) }}" method="POST" class="inline">
                     @csrf
                     @method('DELETE')

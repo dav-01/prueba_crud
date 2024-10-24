@@ -23,6 +23,7 @@ class UserController extends Controller
     {
         $request->validate([
             'name' => 'required',
+            'last_name' => 'required',
             'email' => 'required|email|unique:users,email',
             'password' => 'required|min:6',
             'phone' => 'nullable',
@@ -30,6 +31,7 @@ class UserController extends Controller
 
         User::create([
             'name' => $request->name,
+            'last_name' => $request->last_name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
             'phone' => $request->phone,
@@ -67,6 +69,24 @@ class UserController extends Controller
         ]);
 
         return redirect()->route('users.index')->with('success', 'Usuario actualizado correctamente.');
+    }
+
+    public function enable($id)
+    {
+        $user = User::findOrFail($id);
+        $user->is_active = true;
+        $user->save();
+
+        return redirect()->route('users.index')->with('success', 'Usuario habilitado correctamente.');
+    }
+
+    public function disable($id)
+    {
+        $user = User::findOrFail($id);
+        $user->is_active = false;
+        $user->save();
+
+        return redirect()->route('users.index')->with('success', 'Usuario deshabilitado correctamente.');
     }
 
     public function destroy(User $user)

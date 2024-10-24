@@ -9,22 +9,26 @@
         @csrf
         <div class="mb-4">
             <label for="name" class="block text-sm font-medium">Nombre</label>
-            <input type="text" name="name" class="w-full border-gray-300 rounded-lg mt-1" required>
+            <input type="text" name="name" class="border border-gray-300 rounded px-4 py-2 w-full" required>
+        </div>
+        <div class="mb-4">
+            <label for="last_name" class="block text-sm font-medium">Apellido</label>
+            <input type="text" name="last_name" class="border border-gray-300 rounded px-4 py-2 w-full" required>
         </div>
 
         <div class="mb-4">
             <label for="email" class="block text-sm font-medium">Correo</label>
-            <input type="email" name="email" class="w-full border-gray-300 rounded-lg mt-1" required>
+            <input type="email" name="email" class="border border-gray-300 rounded px-4 py-2 w-full" required>
         </div>
 
         <div class="mb-4">
             <label for="password" class="block text-sm font-medium">Contraseña</label>
-            <input type="password" name="password" class="w-full border-gray-300 rounded-lg mt-1" required>
+            <input type="password" name="password" class="border border-gray-300 rounded px-4 py-2 w-full" required>
         </div>
 
         <div class="mb-4">
             <label for="phone" class="block text-sm font-medium">Teléfono</label>
-            <input type="text" name="phone" class="w-full border-gray-300 rounded-lg mt-1">
+            <input type="text" name="phone" class="border border-gray-300 rounded px-4 py-2 w-full">
         </div>
 
         <button type="submit" class="w-full bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-lg">
