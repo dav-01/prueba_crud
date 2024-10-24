@@ -13,6 +13,7 @@ Asegúrate de tener instalados los siguientes programas en tu sistema:
 - **Git**
 
 ## Instalación en Local
+php artisan serve
 
 Sigue estos pasos para ejecutar el proyecto en tu entorno local.
 
@@ -20,9 +21,15 @@ Sigue estos pasos para ejecutar el proyecto en tu entorno local.
 ```bash
 git clone <URL_DEL_REPOSITORIO>
 cd <NOMBRE_DEL_PROYECTO>
+php artisan serve
+
+```
 
 ### 2. Instalar Dependencias de PHP
+```bash
 composer install
+
+```
 
 ### 3. Instalar Dependencias de Node.js
 
